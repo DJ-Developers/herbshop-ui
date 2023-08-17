@@ -28,9 +28,10 @@ export default function PostCard({ data }) {
         <Image
           src='/shape-avatar.svg'
           alt=''
-          width={88}
-          height={36}
-          className='absolute -bottom-4'
+          width={0}
+          height={0}
+          sizes='100vw'
+          className='absolute -bottom-4 w-[88px] h-auto'
         />
         <LogoSimple
           disabledLink={true}

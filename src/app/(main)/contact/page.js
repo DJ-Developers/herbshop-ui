@@ -37,7 +37,7 @@ export default function Contact() {
         <div className='flex flex-col gap-10'>
           <h3 className='text-3xl font-semibold leading-10'>
             Feel free to contact us. <br />
-            We'll be glad to hear from you, <br /> buddy.
+            We&apos;ll be glad to hear from you, <br /> buddy.
           </h3>
           <div className='flex flex-col gap-6'>
             <div>

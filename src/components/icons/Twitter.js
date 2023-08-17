@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ({ className }) {
+export default function Twitter({ className }) {
   return (
     <div className={className}>
       <svg

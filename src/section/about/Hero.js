@@ -18,7 +18,7 @@ export default function Hero() {
           <h1 className='text-green-700 text-7xl font-bold'>Who</h1>
           <h1 className='text-white text-7xl font-bold'>we are?</h1>
           <h4 className='text-white text-2xl max-w-sm mt-4'>
-            Let's work together and make awesome site easily
+            Let&apos;s work together and make awesome site easily
           </h4>
         </div>
       </div>

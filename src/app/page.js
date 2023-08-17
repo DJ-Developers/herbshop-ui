@@ -37,7 +37,7 @@ export default function Home() {
 
       <div className='max-w-7xl m-auto px-6 py-24 flex flex-col items-center'>
         <h5 className='text-xl'>Latest blogs</h5>
-        <h3 className='text-3xl'>THIS WEEK'S TOP PICKS</h3>
+        <h3 className='text-3xl'>THIS WEEK&apos;S TOP PICKS</h3>
         <div className='grid grid-cols-4 gap-6 pt-20 w-full'>
           {POSTS.slice(0, 7).map((post, index) => (
             <PostLargeCard data={post} index={index} key={post.id} />
@@ -46,7 +46,7 @@ export default function Home() {
       </div>
       <div className='max-w-7xl m-auto px-6 py-24 flex flex-col items-center'>
         <h5 className='text-xl'>Latest blogs</h5>
-        <h3 className='text-3xl'>THIS WEEK'S TOP PICKS</h3>
+        <h3 className='text-3xl'>THIS WEEK&apos;S TOP PICKS</h3>
         <div className='grid grid-cols-4 gap-6 pt-20'>
           {POSTS.slice(0, 4).map((post) => (
             <PostCard key={post.id} data={post} />
@@ -55,7 +55,7 @@ export default function Home() {
       </div>
       <div className='max-w-7xl m-auto px-6 py-24 flex flex-col items-center'>
         <h5 className='text-xl'>Latest blogs</h5>
-        <h3 className='text-3xl'>THIS WEEK'S TOP PICKS</h3>
+        <h3 className='text-3xl'>THIS WEEK&apos;S TOP PICKS</h3>
         <div className='grid grid-cols-2 gap-10 pt-20'>
           {POSTS.slice(0, 4).map((post) => (
             <PostCardHorizontal key={post.id} data={post} />
