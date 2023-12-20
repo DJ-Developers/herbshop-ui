@@ -1,12 +1,14 @@
 import Link from 'next/link'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 export default function LogoSimple({ disabledLink = false, className }) {
   const logo = (
     <div className={className}>
       <span className='sr-only'>Herbshop Company</span>
-
       <svg
-        className='w-10 h-10'
+        className='w-full h-full'
         viewBox='0 0 491.4 500'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'>

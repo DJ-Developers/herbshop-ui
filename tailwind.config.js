@@ -12,6 +12,24 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        fadeDown: {
+          from: { transform: 'translateY(-150%)', opacity: 0 },
+          to: { transform: 'translateY(0%)', opacity: 1 },
+        },
+        fadeUp: {
+          from: { transform: 'translateY(150%)', opacity: 0 },
+          to: { transform: 'translateY(0%)', opacity: 1 },
+        },
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        scaleOut: {
+          from: { transform: 'scale(0.7)', opacity: 0 },
+          to: { transform: 'scale(1)', opacity: 1 },
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

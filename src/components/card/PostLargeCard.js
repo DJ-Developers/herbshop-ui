@@ -13,7 +13,7 @@ export default function PostLargeCard({ data, index }) {
   const latestPostLarge = index === 0
   const latestPost = index === 1 || index === 2
   return (
-    <div className={latestPostLarge ? 'col-span-2' : ''}>
+    <div className={latestPostLarge ? 'lg:col-span-2 md:col-span-2' : ''}>
       <div
         className={
           latestPostLarge || latestPost

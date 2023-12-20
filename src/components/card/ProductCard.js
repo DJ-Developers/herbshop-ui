@@ -3,21 +3,27 @@ import Link from 'next/link'
 import React from 'react'
 import { ColorPreview } from '../color-utils'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 export default function ProductCard({ product }) {
   const { name, slug, featuredImage, price, sale_price, colors, label } =
     product
   return (
-    <div className='shadow-lg rounded-xl overflow-hidden relative'>
+    <div className='shadow rounded-xl overflow-hidden relative'>
       {/* IMAGE */}
-      <div className='p-2'>
-        <Image
-          src={featuredImage}
-          alt=''
-          width={0}
-          height={0}
-          sizes='100vw'
-          className='object-cover w-full h-auto aspect-square rounded-xl'
-        />
+      <div className='p-2 '>
+        <div className='bg-gray-50 overflow-hidden rounded-xl '>
+          <Image
+            src={featuredImage}
+            alt=''
+            width={0}
+            height={0}
+            sizes='100vw'
+            className='object-cover w-full h-auto aspect-square  mix-blend-multiply '
+          />
+        </div>
       </div>
       {label && (
         <div className='absolute top-4 right-4 '>
@@ -32,11 +38,18 @@ export default function ProductCard({ product }) {
 
       {/* CONTENT */}
       <div className='p-6 flex flex-col gap-6'>
-        <Link href={`/shop/${slug}`} className='hover:underline'>
-          <h3 className='text-sm font-medium line-clamp-1'>{name}</h3>
+        <Link href={`/product/${slug}`} className='hover:underline'>
+          <h3 className='text-sm font-semibold line-clamp-1 text-gray-600'>
+            {name}
+          </h3>
         </Link>
-        <div className='flex flex-row justify-between items-center'>
-          <ColorPreview colors={colors} />
+        <div
+          className={classNames(
+            'flex flex-row  items-center justify-end',
+            colors && 'justify-between'
+          )}>
+          {colors && <ColorPreview colors={colors} />}
+
           <div className='flex gap-1 font-medium'>
             <p className={sale_price && 'text-gray-400 line-through'}>
               {price}
