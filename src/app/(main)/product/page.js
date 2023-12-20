@@ -1,9 +1,6 @@
 import React from 'react'
 
-import SearchBar from '@/components/SearchBar'
 import SortBy from '@/components/SortBy'
-import Filter from '@/components/Filter'
-import PageTitle from '@/components/common/PageTitle'
 import { PRODUCTS } from '@/constants/index'
 import ProductCard from '@/components/card/ProductCard'
 import { ChevronRightIcon, PlusIcon } from '@heroicons/react/24/outline'
