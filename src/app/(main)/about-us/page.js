@@ -17,7 +17,7 @@ export default function About() {
             <p className='text-sm font-medium mb-5'>
               Hãy sống cuộc sống của bạn.
             </p>
-            <p className=' lg:text-[32px] text-4xl leading-[48px] mb-5'>
+            <p className=' lg:text-[32px] md:text-4xl text-2xl lg:leading-[48px] mb-5'>
               Niềm hạnh phúc khi <br /> tạo ra những tác phẩm nghệ thuật
             </p>
             <p className='font-light mb-10 leading-8'>
@@ -215,7 +215,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className='max-w-7xl mx-auto lg:px-10 px-6 pt-32 pb-20 '>
+      <div className='max-w-7xl mx-auto lg:px-10 px-6 lg:pt-32 pt-20 pb-20 '>
         <div className=' flex lg:flex-row flex-col gap-y-8'>
           <div className='lg:w-1/3 w-full'>
             <h6 className='lg:text-4xl text-3xl lg:leading-[56px] font-light'>

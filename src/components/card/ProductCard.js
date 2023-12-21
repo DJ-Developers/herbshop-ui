@@ -14,16 +14,18 @@ export default function ProductCard({ product }) {
     <div className='shadow rounded-xl overflow-hidden relative'>
       {/* IMAGE */}
       <div className='p-2 '>
-        <div className='bg-gray-50 overflow-hidden rounded-xl '>
-          <Image
-            src={featuredImage}
-            alt=''
-            width={0}
-            height={0}
-            sizes='100vw'
-            className='object-cover w-full h-auto aspect-square  mix-blend-multiply '
-          />
-        </div>
+        <Link href={`/product/${slug}`}>
+          <div className='bg-gray-50 overflow-hidden rounded-xl group '>
+            <Image
+              src={featuredImage}
+              alt=''
+              width={0}
+              height={0}
+              sizes='100vw'
+              className='object-cover w-full h-auto aspect-square  mix-blend-multiply group-hover:scale-110 transition-transform duration-500 '
+            />
+          </div>
+        </Link>
       </div>
       {label && (
         <div className='absolute top-4 right-4 '>
@@ -39,7 +41,7 @@ export default function ProductCard({ product }) {
       {/* CONTENT */}
       <div className='p-6 flex flex-col gap-6'>
         <Link href={`/product/${slug}`} className='hover:underline'>
-          <h3 className='text-sm font-semibold line-clamp-1 text-gray-600'>
+          <h3 className='lg:text-base text-sm font-semibold line-clamp-1 text-gray-600'>
             {name}
           </h3>
         </Link>

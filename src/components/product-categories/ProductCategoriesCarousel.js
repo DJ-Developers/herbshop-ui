@@ -34,7 +34,7 @@ export default function ProductCategoriesCarousel() {
     <div className='max-w-7xl mx-auto px-6'>
       <div className='flex lg:flex-row flex-col'>
         {PRODUCT_CATEGORIES.map((item, index) => (
-          <div className='lg:w-1/3 lg:px-6 py-10 ' key={index}>
+          <div className='lg:w-1/3 lg:px-6 lg:py-10 py-6 ' key={index}>
             <Link href={item.slug}>
               <div className='relative group '>
                 <div className='overflow-hidden'>

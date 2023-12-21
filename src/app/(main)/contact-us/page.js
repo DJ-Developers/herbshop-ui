@@ -43,16 +43,22 @@ export default function Contact() {
             <div className='bg-gray-900 p-8'>
               <ClockIcon className='w-7 h-7 text-white' />
             </div>
-            <div className='font-extralight text-gray-500'>
+            <div className='font-extralight text-gray-500  '>
               <p className='font-medium mb-3 text-gray-900'>
                 HOUR OF OPERATION
               </p>
-              <p className='leading-8'>Monday - Friday: 09:00 - 20:00</p>
-              <p className='leading-8'>Saturday & Sunday : 10:30 - 22:00</p>
+              <p className='leading-8 lg:text-base text-xs'>
+                Monday - Friday: 09:00 - 20:00
+              </p>
+              <p className='leading-8 lg:text-base text-xs'>
+                Saturday & Sunday : 10:30 - 22:00
+              </p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Form */}
       <div className='max-w-7xl mx-auto lg:px-10 px-6'>
         <div className='w-full flex flex-col items-center py-28 '>
           <p className='text-3xl mb-10'>Send a message</p>

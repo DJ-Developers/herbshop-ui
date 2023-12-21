@@ -135,8 +135,8 @@ export default function SinglePost() {
 
         {/* footer post */}
         <div className='max-w-4xl mx-auto'>
-          <div className=' px-6 flex justify-between items-center pb-6 border-b mb-10'>
-            <div className=' inline-flex'>
+          <div className='px-6 flex lg:flex-row flex-col justify-between lg:items-center pb-6 border-b mb-10 gap-y-6'>
+            <div className='inline-flex'>
               <TagIcon className='w-5 h-5 mr-4' />
               <ul className='text-sm inline-flex font-medium text-gray-500'>
                 {tags.map((tag, index) => (
@@ -148,7 +148,7 @@ export default function SinglePost() {
                 ))}
               </ul>
             </div>
-            <div className='text-sm font-medium text-gray-500 inline-flex'>
+            <div className='text-sm font-medium text-gray-500 inline-flex justify-end'>
               Share this post
               <div className='px-4 flex gap-3'>
                 <Link
@@ -173,7 +173,7 @@ export default function SinglePost() {
       </div>
       {/* You Might Also Like*/}
       <div className='max-w-7xl mx-auto pt-10 pb-20 lg:px-10 px-6 text-center'>
-        <p className='text-4xl mb-10'>You Might Also Like</p>
+        <p className='lg:text-4xl text-3xl mb-10'>You Might Also Like</p>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
           <SimplePostCard />
           <SimplePostCard />

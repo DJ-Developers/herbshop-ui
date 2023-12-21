@@ -1,11 +1,9 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-import { Montserrat } from 'next/font/google'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+import { montserrat } from '@/components/fonts'
 
 export const metadata = {
   title: {

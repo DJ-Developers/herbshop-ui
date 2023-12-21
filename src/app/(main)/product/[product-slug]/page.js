@@ -45,30 +45,33 @@ export default function SingleProductPage() {
             </h1>
             <div className='mt-3'>
               <ul className='text-sm flex flex-row items-center font-medium'>
-                <li>
+                <li className='inline-flex items-center'>
                   <Link
                     href='/'
                     className='text-gray-600 hover:text-gray-900 hover:underline'>
                     Home
                   </Link>
+                  <ChevronRightIcon className='h-4 w-4 mx-1.5' />
                 </li>
-                <ChevronRightIcon className='h-4 w-4 mx-1.5' />
-                <li>
+
+                <li className='lg:inline-flex hidden items-center '>
                   <Link
                     href='/product'
                     className='text-gray-600 hover:text-gray-900 hover:underline'>
                     Products
                   </Link>
+                  <ChevronRightIcon className='h-4 w-4 mx-1.5' />
                 </li>
-                <ChevronRightIcon className='h-4 w-4 mx-1.5' />
-                <li>
+
+                <li className='inline-flex items-center'>
                   <Link
                     href={`/product-category/${product.category.slug}`}
                     className='text-gray-600 hover:text-gray-900 hover:underline'>
                     {product.category.name}
                   </Link>
+                  <ChevronRightIcon className='h-4 w-4 mx-1.5' />
                 </li>
-                <ChevronRightIcon className='h-4 w-4 mx-1.5' />
+
                 <li className=' font-semibold'>{product.title}</li>
               </ul>
             </div>
@@ -122,7 +125,7 @@ export default function SingleProductPage() {
                 {product.salePrice && product.salePrice}
               </div>
               {/* Short Description */}
-              <p className=' text-sm text-gray-500 font-extralight leading-7'>
+              <p className=' text-sm text-gray-500 font-light leading-7'>
                 {product.shortDescriptions}
               </p>
 
@@ -216,13 +219,13 @@ export default function SingleProductPage() {
             <p className='text-sm font-medium px-6'>Description</p>
           </div>
           <hr className='border-t-1'></hr>
-          <div className='px-8 pt-10 pb-16'>
+          <div className='lg:px-8 px-6 lg:pt-10 pt-8 lg:pb-16 pb-10'>
             <ContentPreview data={product.description} />
           </div>
         </div>
       </div>
       <div className='max-w-7xl mx-auto lg:px-10 px-6 py-16'>
-        <h3 className='text-4xl font-medium ml-4 text-center mb-14'>
+        <h3 className='lg:text-4xl text-3xl font-medium ml-4 text-center mb-14'>
           You Might Also Like
         </h3>
         <CarouselBasic data={PRODUCTS} />

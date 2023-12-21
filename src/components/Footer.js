@@ -4,50 +4,10 @@ import React from 'react'
 import { LogoSimple } from '@/components/logo'
 import { Facebook, Instagram, Linkin, Twitter } from '@/components/icons'
 
-const company = [
-  {
-    id: 1,
-    title: 'About',
-    url: '/about',
-  },
-  {
-    id: 2,
-    title: 'Blog',
-    url: '/blog',
-  },
-  {
-    id: 3,
-    title: 'Jobs',
-    url: '/jobs',
-  },
-  {
-    id: 4,
-    title: 'Partners',
-    url: '/partners',
-  },
-]
-const legal = [
-  {
-    id: 1,
-    title: 'Claim',
-    url: '/claim',
-  },
-  {
-    id: 2,
-    title: 'Privacy',
-    url: '/privacy',
-  },
-  {
-    id: 3,
-    title: 'Terms',
-    url: '/terms',
-  },
-]
-
 export default function Footer() {
   return (
     <footer className='bg-[#f8f8f8]'>
-      <div className='max-w-7xl mx-auto px-10'>
+      <div className='max-w-7xl mx-auto lg:px-10 px-6'>
         <div className=' flex lg:flex-row flex-col pt-24 pb-16 gap-y-10'>
           <div className='lg:w-1/2 w-full flex flex-col items-center lg:items-start'>
             <LogoSimple disabledLink={true} className='w-10 h-10' />
@@ -58,9 +18,9 @@ export default function Footer() {
               của mình.
             </p>
           </div>
-          <div className='lg:w-1/2 w-full'>
-            <div className='flex'>
-              <div className='w-1/3'>
+          <div className='lg:w-1/2 w-full flex lg:flex-row flex-col gap-y-8'>
+            <div className='lg:w-2/3 w-full flex'>
+              <div className='w-1/2'>
                 <ul className='text-gray-600 text-sm font-medium flex flex-col gap-y-6'>
                   <li className='hover:text-gray-900'>
                     <Link href='/about-us'>About Us</Link>
@@ -76,7 +36,7 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
-              <div className='w-1/3'>
+              <div className='w-1/2'>
                 <ul className='text-gray-600 text-sm font-medium flex flex-col gap-y-6'>
                   <li className='hover:text-gray-900'>
                     <Link href='#'>Return</Link>
@@ -92,26 +52,27 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
-              <div className='w-1/3'>
-                <ul className='text-gray-600 text-sm font-medium flex flex-col gap-y-6'>
-                  <li className='hover:text-gray-900 inline-flex'>
-                    <Facebook className='w-5 h-5 mr-4' />
-                    <Link href='#'>Facebook</Link>
-                  </li>
-                  <li className=' hover:text-gray-900 inline-flex '>
-                    <Instagram className='w-5 h-5 mr-4' />
-                    <Link href='#'>Instagram</Link>
-                  </li>
-                  <li className=' hover:text-gray-900 inline-flex '>
-                    <Twitter className='w-5 h-5 mr-4' />
-                    <Link href='#'>Twitter</Link>
-                  </li>
-                  <li className=' hover:text-gray-900 inline-flex'>
-                    <Linkin className='w-5 h-5 mr-4' />
-                    <Link href='#'>Linkin</Link>
-                  </li>
-                </ul>
-              </div>
+            </div>
+
+            <div className='lg:w-1/3 w-ful'>
+              <ul className='text-gray-600 text-sm font-medium flex flex-col gap-y-6'>
+                <li className='hover:text-gray-900 inline-flex'>
+                  <Facebook className='w-5 h-5 mr-3' />
+                  <Link href='#'>Facebook</Link>
+                </li>
+                <li className=' hover:text-gray-900 inline-flex '>
+                  <Instagram className='w-5 h-5 mr-3' />
+                  <Link href='#'>Instagram</Link>
+                </li>
+                <li className=' hover:text-gray-900 inline-flex '>
+                  <Twitter className='w-5 h-5 mr-3' />
+                  <Link href='#'>Twitter</Link>
+                </li>
+                <li className=' hover:text-gray-900 inline-flex'>
+                  <Linkin className='w-5 h-5 mr-3' />
+                  <Link href='#'>Linkin</Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
