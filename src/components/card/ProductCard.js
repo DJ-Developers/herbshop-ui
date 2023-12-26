@@ -39,11 +39,11 @@ export default function ProductCard({ product }) {
       )}
 
       {/* CONTENT */}
-      <div className='p-6 flex flex-col gap-6'>
-        <Link href={`/product/${slug}`} className='hover:underline'>
-          <h3 className='lg:text-base text-sm font-semibold line-clamp-1 text-gray-600'>
-            {name}
-          </h3>
+      <div className='px-6 pb-6 pt-4 flex flex-col space-y-6'>
+        <Link
+          href={`/product/${slug}`}
+          className='hover:underline  text-gray-600 hover:text-gray-900 transition-all duration-300 '>
+          <h3 className='line-clamp-1'>{name}</h3>
         </Link>
         <div
           className={classNames(
@@ -52,8 +52,8 @@ export default function ProductCard({ product }) {
           )}>
           {colors && <ColorPreview colors={colors} />}
 
-          <div className='flex gap-1 font-medium'>
-            <p className={sale_price && 'text-gray-400 line-through'}>
+          <div className='flex font-medium '>
+            <p className={sale_price && 'text-gray-400 line-through mr-2'}>
               {price}
             </p>
             {sale_price && sale_price}

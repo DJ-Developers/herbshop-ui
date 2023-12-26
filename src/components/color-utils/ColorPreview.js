@@ -4,11 +4,11 @@ export default function ColorPreview({ colors, limit = 3 }) {
   const showColor = colors.slice(0, limit)
   const moreColor = colors.length - limit
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center '>
       {showColor.map((color, index) => (
         <span
           key={color + index}
-          className='w-4 h-4 rounded-full border-2 border-white shadow-inner -ml-1.5'
+          className='w-4 h-4 rounded-full border-2 border-white shadow-inner -ml-1.5 first:ml-0'
           style={{ backgroundColor: color }}
         />
       ))}

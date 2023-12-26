@@ -201,18 +201,42 @@ export default function About() {
         </div>
       </div>
       <div className='max-w-7xl mx-auto lg:px-10 px-6'>
-        <div className=' bg-[url("/blog-thumbnail.jpeg")] w-full lg:h-[564px] h-[260px] bg-no-repeat bg-cover bg-center'>
-          <div className='w-full h-full flex justify-center items-center'>
-            <Link href='#'>
-              <Image
-                src='/button-play-alt.png'
-                alt=''
-                width={96}
-                height={96}
-                className='hover:scale-110 transition-transform duration-500'
+        <div className='relative'>
+          <Image
+            src='/blog-thumbnail.jpeg'
+            alt=''
+            width={0}
+            height={0}
+            sizes='100vw'
+            className='w-full h-full object-cover object-center'
+          />
+          <Link
+            href='#'
+            className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform duration-500'>
+            <svg
+              width='96.000000'
+              height='96.000000'
+              viewBox='0 0 96 96'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'>
+              <defs />
+              <circle
+                id='Oval 4'
+                cx='48.000000'
+                cy='48.000000'
+                r='46.500000'
+                stroke='#FFFFFF'
+                strokeWidth='3.000000'
               />
-            </Link>
-          </div>
+              <path
+                id='Polygon 1'
+                d='M39 33.1436L39 60.8564L63 47L39 33.1436ZM42 38.3398L42 55.6602L57 47L42 38.3398Z'
+                fillRule='evenodd'
+                fill='#FFFFFF'
+              />
+            </svg>
+          </Link>
         </div>
       </div>
       <div className='max-w-7xl mx-auto lg:px-10 px-6 lg:pt-32 pt-20 pb-20 '>

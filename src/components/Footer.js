@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className='bg-[#f8f8f8]'>
       <div className='max-w-7xl mx-auto lg:px-10 px-6'>
-        <div className=' flex lg:flex-row flex-col pt-24 pb-16 gap-y-10'>
+        <div className=' flex lg:flex-row flex-col pt-24 pb-16 space-y-10 lg:space-y-0 '>
           <div className='lg:w-1/2 w-full flex flex-col items-center lg:items-start'>
             <LogoSimple disabledLink={true} className='w-10 h-10' />
 
@@ -18,10 +18,10 @@ export default function Footer() {
               của mình.
             </p>
           </div>
-          <div className='lg:w-1/2 w-full flex lg:flex-row flex-col gap-y-8'>
+          <div className='lg:w-1/2 w-full flex lg:flex-row flex-col space-y-8 lg:space-y-0 '>
             <div className='lg:w-2/3 w-full flex'>
               <div className='w-1/2'>
-                <ul className='text-gray-600 text-sm font-medium flex flex-col gap-y-6'>
+                <ul className='text-gray-600 text-sm font-medium flex flex-col space-y-6'>
                   <li className='hover:text-gray-900'>
                     <Link href='/about-us'>About Us</Link>
                   </li>
@@ -37,7 +37,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className='w-1/2'>
-                <ul className='text-gray-600 text-sm font-medium flex flex-col gap-y-6'>
+                <ul className='text-gray-600 text-sm font-medium flex flex-col space-y-6'>
                   <li className='hover:text-gray-900'>
                     <Link href='#'>Return</Link>
                   </li>
@@ -55,7 +55,7 @@ export default function Footer() {
             </div>
 
             <div className='lg:w-1/3 w-ful'>
-              <ul className='text-gray-600 text-sm font-medium flex flex-col gap-y-6'>
+              <ul className='text-gray-600 text-sm font-medium flex flex-col space-y-6'>
                 <li className='hover:text-gray-900 inline-flex'>
                   <Facebook className='w-5 h-5 mr-3' />
                   <Link href='#'>Facebook</Link>

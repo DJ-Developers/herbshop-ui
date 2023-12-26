@@ -1,13 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { Fragment, useState } from 'react'
-import {
-  Combobox,
-  Dialog,
-  Disclosure,
-  Popover,
-  Transition,
-} from '@headlessui/react'
+import { Combobox, Dialog, Transition } from '@headlessui/react'
 
 // Icons
 import {
@@ -16,13 +10,9 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from '@heroicons/react/20/solid'
 
-import { LogoFull } from '@/components/logo'
+import { LogoFull, LogoSimple } from '@/components/logo'
+import ShoppingCart from './ShoppingCart'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -30,6 +20,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [cartOpen, setCartOpen] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
@@ -49,7 +40,7 @@ export default function Navbar() {
           <LogoFull />
         </div>
 
-        <Popover.Group className='hidden lg:flex lg:gap-x-12 text-base font-medium leading-6 text-gray-600 '>
+        <div className='hidden lg:flex lg:space-x-12 text-base font-medium leading-6 text-gray-600 '>
           <Link href='/about-us' className=' hover:text-gray-900'>
             About us
           </Link>
@@ -64,18 +55,22 @@ export default function Navbar() {
           <Link href='/contact-us' className=' hover:text-gray-900'>
             Contact us
           </Link>
-        </Popover.Group>
+        </div>
 
-        <div className='flex flex-1 justify-end items-center gap-6 text-gray-500'>
+        <div className='flex flex-1 justify-end items-center space-x-5 text-gray-500'>
           <button onClick={openModal} className='p-2 relative'>
             <MagnifyingGlassIcon className='w-6 h-6' />
           </button>
-          <button className='relative p-2 rounded-full'>
+          <button
+            className='relative p-2 rounded-full'
+            onClick={() => setCartOpen(true)}>
             <ShoppingBagIcon className='w-6 h-6' />
             <span className='min-w-5 h-5 px-1.5 flex items-center justify-center text-xs font-medium bg-red-500 text-white absolute top-0 right-0 rounded-full '>
               2
             </span>
           </button>
+
+          {/* Button Menu On Mobile */}
           <div className='flex lg:hidden'>
             <button
               type='button'
@@ -88,85 +83,98 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* On Mobile */}
-      <Dialog
-        as='div'
-        className='lg:hidden'
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}>
-        <div className='fixed inset-0 z-10' />
-        <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
-          <div className='flex items-center justify-between'>
-            <LogoFull />
-            <button
-              type='button'
-              className='-m-2.5 rounded-md p-2.5 text-gray-700'
-              onClick={() => setMobileMenuOpen(false)}>
-              <span className='sr-only'>Close menu</span>
-              <XMarkIcon className='h-6 w-6' aria-hidden='true' />
-            </button>
-          </div>
-          <div className='mt-6 flow-root'>
-            <div className='-my-6 divide-y divide-gray-500/10'>
-              <div className='space-y-2 py-6'>
-                <Link
-                  onClick={() => setMobileMenuOpen(false)}
-                  href='/about'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                  About us
-                </Link>
-                <Link
-                  onClick={() => setMobileMenuOpen(false)}
-                  href='/product'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                  Shop
-                </Link>
+      {/* On Moblie */}
+      <Transition as={Fragment} show={mobileMenuOpen}>
+        <Dialog
+          as='div'
+          className='relative z-10'
+          onClose={() => setMobileMenuOpen(false)}>
+          <Transition.Child
+            as={Fragment}
+            enter='ease-out duration-300'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='ease-in duration-200'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'>
+            <div className='fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-75 transition-opacity' />
+          </Transition.Child>
+          <div className='fixed top-0 bottom-0 left-0 overflow-hidden'>
+            <div className='absolute top-0 bottom-0 left-0 overflow-hidden'>
+              <div className='pointer-events-none fixed top-0 bottom-0 right-0 flex max-w-full pl-10'>
+                <Transition.Child
+                  as={Fragment}
+                  enter='transform transition ease-in-out duration-500 sm:duration-700'
+                  enterFrom='translate-x-full'
+                  enterTo='translate-x-0'
+                  leave='transform transition ease-in-out duration-500 sm:duration-700'
+                  leaveFrom='translate-x-0'
+                  leaveTo='translate-x-full'>
+                  <Dialog.Panel className='pointer-events-auto relative w-screen max-w-[280px]'>
+                    <Transition.Child
+                      as={Fragment}
+                      enter='ease-in-out duration-500'
+                      enterFrom='opacity-0'
+                      enterTo='opacity-100'
+                      leave='ease-in-out duration-500'
+                      leaveFrom='opacity-100'
+                      leaveTo='opacity-0'>
+                      <div className='absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4'></div>
+                    </Transition.Child>
+                    <div className='flex h-full flex-col  bg-white shadow-md'>
+                      <div className='py-4 pl-5 pr-4 flex justify-between items-center border-b'>
+                        <LogoSimple className='h-8 w-8' />
 
-                {/* <Disclosure as='div' className='-mx-3'>
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                        Product
-                        <ChevronDownIcon
-                          className={classNames(
-                            open ? 'rotate-180' : '',
-                            'h-5 w-5 flex-none'
-                          )}
-                          aria-hidden='true'
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className='mt-2 space-y-2'>
-                        {products.map((item) => (
-                          <Disclosure.Button
-                            key={item.name}
-                            as='a'
-                            href={item.href}
-                            className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                            {item.name}
-                          </Disclosure.Button>
-                        ))}
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure> */}
+                        <div className='text-gray-500 flex space-x-4 items-center'>
+                          <button
+                            type='button'
+                            onClick={() => setMobileMenuOpen(false)}>
+                            <span className='sr-only'>
+                              Close Menu on Mobile
+                            </span>
+                            <XMarkIcon
+                              className='h-6 w-6 text-gray-900'
+                              aria-hidden='true'
+                            />
+                          </button>
+                        </div>
+                      </div>
 
-                <Link
-                  onClick={() => setMobileMenuOpen(false)}
-                  href='/blog'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                  Blog
-                </Link>
-                <Link
-                  onClick={() => setMobileMenuOpen(false)}
-                  href='/contact-us'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                  Contact us
-                </Link>
+                      <div className='relative mt-6 flex-1 px-4 sm:px-6'>
+                        {/* Your content */}
+                        <Link
+                          onClick={() => setMobileMenuOpen(false)}
+                          href='/about-us'
+                          className='block px-3 py-2 font-medium  text-gray-900'>
+                          About us
+                        </Link>
+                        <Link
+                          onClick={() => setMobileMenuOpen(false)}
+                          href='/product'
+                          className='block  px-3 py-2  font-medium  text-gray-900'>
+                          Shop
+                        </Link>
+                        <Link
+                          onClick={() => setMobileMenuOpen(false)}
+                          href='/blog'
+                          className='block  px-3 py-2  font-medium  text-gray-900'>
+                          Blog
+                        </Link>
+                        <Link
+                          onClick={() => setMobileMenuOpen(false)}
+                          href='/contact-us'
+                          className='block  px-3 py-2  font-medium  text-gray-900'>
+                          Contact us
+                        </Link>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
               </div>
             </div>
           </div>
-        </Dialog.Panel>
-      </Dialog>
+        </Dialog>
+      </Transition>
 
       {/* Search bar */}
       <Transition appear show={isOpen} as={Fragment}>
@@ -179,10 +187,10 @@ export default function Navbar() {
             leave='ease-in duration-200'
             leaveFrom='opacity-100'
             leaveTo='opacity-0'>
-            <div className='fixed inset-0 bg-slate-900/25 backdrop-blur' />
+            <div className='fixed top-0 bottom-0 left-0 right-0 bg-slate-900 bg-opacity-75 transition-opacity' />
           </Transition.Child>
 
-          <div className='fixed inset-0 overflow-y-auto'>
+          <div className='fixed top-0 bottom-0 left-0 right-0 overflow-y-auto'>
             <div className='flex min-h-full items-start justify-center p-4 pt-32 text-center'>
               <Transition.Child
                 as={Fragment}
@@ -208,6 +216,10 @@ export default function Navbar() {
           </div>
         </Dialog>
       </Transition>
+
+      {/* Show Cart */}
+
+      <ShoppingCart show={cartOpen} onClose={() => setCartOpen(false)} />
     </header>
   )
 }

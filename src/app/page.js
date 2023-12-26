@@ -25,7 +25,7 @@ export default function Home() {
           className='w-full h-full object-cover object-center animate-[fadeIn_3s_ease-in-out]'
         />
         <div className='absolute w-[340px] h-[340px] bg-white rounded-full top-[calc(50%-160px)] left-[calc(50%-160px)] p-4 animate-[scaleOut_1s_ease-in-out]'>
-          <div className='border rounded-full w-full h-full border-lime-600 border-dashed flex flex-col justify-center items-center gap-3 animate-[scaleOut_1.2s_ease-in-out] '>
+          <div className='border rounded-full w-full h-full border-lime-600 border-dashed flex flex-col justify-center items-center space-y-3 animate-[scaleOut_1.2s_ease-in-out] '>
             <LogoSimple
               disabledLink={true}
               className='w-16 h-16 animate-[fadeDown_1.5s_ease-in-out]'
@@ -38,9 +38,10 @@ export default function Home() {
               className={`${kaushan_script.className} text-3xl text-lime-600 animate-[fadeUp_2s_ease-in-out]`}>
               Just for you
             </p>
+
             <Link
               href='/product'
-              className='uppercase underline underline-offset-8 mt-4 animate-[fadeUp_2.3s_ease-in-out] '>
+              className='uppercase underline underline-offset-8 pt-1 animate-[fadeUp_2.3s_ease-in-out] '>
               Shop now
             </Link>
           </div>
@@ -69,7 +70,7 @@ export default function Home() {
                 sizes='100vw'
                 className='w-full h-full object-cover object-center'
               />
-              <div className=' absolute inset-0 flex flex-col justify-center items-center'>
+              <div className=' absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center'>
                 <h2 className={` text-4xl lg:text-5xl ${sacramento.className}`}>
                   Winter Sale
                 </h2>
@@ -138,7 +139,7 @@ export default function Home() {
       </div>
       {/*  */}
       <div className='max-w-7xl mx-auto lg:py-20 py-8 lg:px-10 px-4'>
-        <div className='flex lg:flex-row flex-col gap-8'>
+        <div className='flex lg:flex-row flex-col space-x-8'>
           <div className='lg:w-1/2 h-auto relative overflow-hidden group '>
             <Image
               src='/banner-01.jpeg'
@@ -159,6 +160,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
           <div className='lg:w-1/2 h-auto relative overflow-hidden group'>
             <Image
               src='/banner-02.jpeg'

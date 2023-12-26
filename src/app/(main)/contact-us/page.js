@@ -20,7 +20,7 @@ export default function Contact() {
       </div>
       <div className='max-w-7xl mx-auto lg:px-10 px-6'>
         <div className='flex lg:flex-row flex-col lg:gap-x-20 gap-y-10 justify-between'>
-          <div className='flex items-start gap-5'>
+          <div className='flex items-start space-x-5'>
             <div className='bg-gray-900 p-8'>
               <MapPinIcon className='w-7 h-7 text-white' />
             </div>
@@ -29,7 +29,7 @@ export default function Contact() {
               <p className=' '>+ Online store</p>
             </div>
           </div>
-          <div className='flex items-start gap-5'>
+          <div className='flex items-start space-x-5'>
             <div className='bg-gray-900 p-8'>
               <PhoneIcon className='w-7 h-7 text-white' />
             </div>
@@ -39,7 +39,7 @@ export default function Contact() {
               <p className='leading-8'>Mail: contact@herbshop.vn</p>
             </div>
           </div>
-          <div className='flex items-start gap-5'>
+          <div className='flex items-start space-x-5'>
             <div className='bg-gray-900 p-8'>
               <ClockIcon className='w-7 h-7 text-white' />
             </div>

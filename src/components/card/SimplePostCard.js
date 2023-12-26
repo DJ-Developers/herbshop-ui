@@ -22,7 +22,7 @@ export default function SimplePostCard() {
           />
         </Link>
       </div>
-      <div className='flex flex-col gap-4 text-left'>
+      <div className='flex flex-col space-y-4 text-left'>
         <div className='text-sm text-gray-600'>
           <span className=' mr-6 inline-flex items-center justify-center'>
             <CalendarIcon className='w-5 h-5 mr-3' />

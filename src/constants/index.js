@@ -127,3 +127,39 @@ export const product = {
 }
 
 // ----------
+export const cartItems = [
+  {
+    productName: 'Nai Sừng Tấm Monty',
+    slug: '',
+    imageSrc: '/product/Monty-The-Moose.jpg',
+    price: 480000,
+    quantity: 1,
+  },
+  {
+    productName: 'Ngựa vằn Xander',
+    slug: '',
+    imageSrc: '/product/Xander-The-Zebra.jpg',
+    price: 550000,
+    sale_price: 490000,
+    colors: ['#000'],
+    quantity: 1,
+  },
+  {
+    productName: 'Lạc đà không bướu',
+    slug: '',
+    imageSrc: '/product/LONZO-LLAMA.jpg',
+    price: 620000,
+    sale_price: 580000,
+    colors: ['#94d82d'],
+    size: 'M',
+    quantity: 1,
+  },
+  {
+    productName: 'Cây đuôi công',
+    slug: '',
+    imageSrc: '/product/Cay-Duoi-Cong.jpg',
+    price: 120000,
+    size: 'L',
+    quantity: 2,
+  },
+]
