@@ -13,6 +13,7 @@ import {
 
 import { LogoFull, LogoSimple } from '@/components/logo'
 import ShoppingCart from './ShoppingCart'
+import MenuOnMobile from './MenuOnMobile'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -74,7 +75,7 @@ export default function Navbar() {
           <div className='flex lg:hidden'>
             <button
               type='button'
-              className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
+              className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 focus:outline-none'
               onClick={() => setMobileMenuOpen(true)}>
               <span className='sr-only'>Open main menu</span>
               <Bars3Icon className='h-6 w-6' aria-hidden='true' />
@@ -84,97 +85,10 @@ export default function Navbar() {
       </nav>
 
       {/* On Moblie */}
-      <Transition as={Fragment} show={mobileMenuOpen}>
-        <Dialog
-          as='div'
-          className='relative z-10'
-          onClose={() => setMobileMenuOpen(false)}>
-          <Transition.Child
-            as={Fragment}
-            enter='ease-out duration-300'
-            enterFrom='opacity-0'
-            enterTo='opacity-100'
-            leave='ease-in duration-200'
-            leaveFrom='opacity-100'
-            leaveTo='opacity-0'>
-            <div className='fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-75 transition-opacity' />
-          </Transition.Child>
-          <div className='fixed top-0 bottom-0 left-0 overflow-hidden'>
-            <div className='absolute top-0 bottom-0 left-0 overflow-hidden'>
-              <div className='pointer-events-none fixed top-0 bottom-0 right-0 flex max-w-full pl-10'>
-                <Transition.Child
-                  as={Fragment}
-                  enter='transform transition ease-in-out duration-500 sm:duration-700'
-                  enterFrom='translate-x-full'
-                  enterTo='translate-x-0'
-                  leave='transform transition ease-in-out duration-500 sm:duration-700'
-                  leaveFrom='translate-x-0'
-                  leaveTo='translate-x-full'>
-                  <Dialog.Panel className='pointer-events-auto relative w-screen max-w-[280px]'>
-                    <Transition.Child
-                      as={Fragment}
-                      enter='ease-in-out duration-500'
-                      enterFrom='opacity-0'
-                      enterTo='opacity-100'
-                      leave='ease-in-out duration-500'
-                      leaveFrom='opacity-100'
-                      leaveTo='opacity-0'>
-                      <div className='absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4'></div>
-                    </Transition.Child>
-                    <div className='flex h-full flex-col  bg-white shadow-md'>
-                      <div className='py-4 pl-5 pr-4 flex justify-between items-center border-b'>
-                        <LogoSimple className='h-8 w-8' />
-
-                        <div className='text-gray-500 flex space-x-4 items-center'>
-                          <button
-                            type='button'
-                            onClick={() => setMobileMenuOpen(false)}>
-                            <span className='sr-only'>
-                              Close Menu on Mobile
-                            </span>
-                            <XMarkIcon
-                              className='h-6 w-6 text-gray-900'
-                              aria-hidden='true'
-                            />
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        {/* Your content */}
-                        <Link
-                          onClick={() => setMobileMenuOpen(false)}
-                          href='/about-us'
-                          className='block px-3 py-2 font-medium  text-gray-900'>
-                          About us
-                        </Link>
-                        <Link
-                          onClick={() => setMobileMenuOpen(false)}
-                          href='/product'
-                          className='block  px-3 py-2  font-medium  text-gray-900'>
-                          Shop
-                        </Link>
-                        <Link
-                          onClick={() => setMobileMenuOpen(false)}
-                          href='/blog'
-                          className='block  px-3 py-2  font-medium  text-gray-900'>
-                          Blog
-                        </Link>
-                        <Link
-                          onClick={() => setMobileMenuOpen(false)}
-                          href='/contact-us'
-                          className='block  px-3 py-2  font-medium  text-gray-900'>
-                          Contact us
-                        </Link>
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
+      <MenuOnMobile
+        show={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+      />
 
       {/* Search bar */}
       <Transition appear show={isOpen} as={Fragment}>

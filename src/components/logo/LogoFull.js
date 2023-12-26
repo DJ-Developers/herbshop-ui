@@ -132,5 +132,9 @@ export default function LogoFull({ disabledLink = false }) {
     return <>{logo}</>
   }
 
-  return <NextLink href='/'>{logo}</NextLink>
+  return (
+    <NextLink href='/' className=' focus:outline-none'>
+      {logo}
+    </NextLink>
+  )
 }

@@ -613,10 +613,10 @@ export default function Checkout() {
                           <ChevronLeftIcon className='w-4 h-4 mr-2 -ml-2' />
                           Continue Shopping
                         </Link>
-                        <button className='px-8 py-3 bg-gray-900 hover:bg-opacity-80 text-white border border-gray-900  rounded-full inline-flex items-center transition-all duration-500'>
+                        {/* <button className='px-8 py-3 bg-gray-900 hover:bg-opacity-80 text-white border border-gray-900  rounded-full inline-flex items-center transition-all duration-500'>
                           <CloudArrowDownIcon className='w-4 h-4 mr-2 -ml-2' />
                           Download as PDF
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>

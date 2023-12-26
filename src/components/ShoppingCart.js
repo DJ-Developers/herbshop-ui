@@ -35,7 +35,7 @@ export default function ShoppingCart({ show, onClose }) {
                 leave='transform transition ease-in-out duration-500 sm:duration-700'
                 leaveFrom='translate-x-0'
                 leaveTo='translate-x-full'>
-                <Dialog.Panel className='pointer-events-auto w-screen max-w-sm'>
+                <Dialog.Panel className='pointer-events-auto w-svw max-w-sm'>
                   <div className='flex h-full flex-col overflow-y-scroll bg-white shadow-xl'>
                     <div className='flex-1 overflow-y-auto px-4 py-6 sm:px-6'>
                       <div className='flex items-start justify-between'>
@@ -45,7 +45,7 @@ export default function ShoppingCart({ show, onClose }) {
                         <div className='ml-3 flex h-7 items-center'>
                           <button
                             type='button'
-                            className='relative -m-2 p-2 text-gray-400 hover:text-gray-500'
+                            className='relative -m-2 p-2 text-gray-400 hover:text-gray-500  focus:outline-none'
                             onClick={onClose}>
                             <span className='absolute -inset-0.5' />
                             <span className='sr-only'>Close panel</span>

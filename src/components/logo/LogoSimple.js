@@ -87,5 +87,9 @@ export default function LogoSimple({ disabledLink = false, className }) {
     return <>{logo}</>
   }
 
-  return <Link href='/'>{logo}</Link>
+  return (
+    <Link href='/' className=' focus:outline-none'>
+      {logo}
+    </Link>
+  )
 }

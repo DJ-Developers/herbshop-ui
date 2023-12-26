@@ -30,7 +30,7 @@ export default function PageTitle({ title, bgImage = '/page-title-bg.jpeg' }) {
                   </Link>
                 </li>
                 <ChevronRightIcon className='h-4 w-4 mx-1.5' />
-                <li className=' font-semibold'>{title}</li>
+                <li className='font-semibold'>{title}</li>
               </ul>
             </div>
           </div>

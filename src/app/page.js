@@ -59,7 +59,7 @@ export default function Home() {
       </div>
       {/*  */}
       <div className='max-w-7xl mx-auto lg:px-10 px-6 lg:pb-32 pb-20'>
-        <div className='flex lg:flex-row flex-col gap-x-10 gap-y-10'>
+        <div className='flex lg:flex-row flex-col lg:space-x-10 lg:space-y-0 space-y-10'>
           <div className='lg:w-1/2 w-full'>
             <div className='max-w-[500px] h-auto relative'>
               <Image
@@ -100,7 +100,7 @@ export default function Home() {
               </div>
               <div className='absolute top-[15px] left-[15px] w-[calc(100%-30px)] h-[calc(100%-30px)] border border-white '></div>
             </div>
-            <div className='text-gray-900 flex lg:flex-row flex-col lg:items-center gap-y-6 justify-between'>
+            <div className='text-gray-900 flex lg:flex-row flex-col lg:items-center space-y-6 justify-between'>
               <div>
                 <h2 className='text-5xl font-normal'>10% off</h2>
                 <h3 className=' leading-10 font-light tracking-wider'>
@@ -139,7 +139,7 @@ export default function Home() {
       </div>
       {/*  */}
       <div className='max-w-7xl mx-auto lg:py-20 py-8 lg:px-10 px-4'>
-        <div className='flex lg:flex-row flex-col space-x-8'>
+        <div className='flex lg:flex-row flex-col lg:space-x-8 space-y-6 lg:space-y-0'>
           <div className='lg:w-1/2 h-auto relative overflow-hidden group '>
             <Image
               src='/banner-01.jpeg'

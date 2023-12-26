@@ -200,8 +200,8 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className='max-w-7xl mx-auto lg:px-10 px-6'>
-        <div className='relative'>
+      <div className='max-w-7xl mx-auto lg:px-10 px-0'>
+        <div className='relative lg:h-auto h-[264px]'>
           <Image
             src='/blog-thumbnail.jpeg'
             alt=''
