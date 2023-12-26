@@ -21,7 +21,7 @@ export default function ShoppingCart({ show, onClose }) {
           leave='ease-in-out duration-500'
           leaveFrom='opacity-100'
           leaveTo='opacity-0'>
-          <div className='fixed top-0 bottom-0 left-0 right-0 bg-gray-500 bg-opacity-75 transition-opacity' />
+          <div className='fixed top-0 bottom-0 left-0 right-0 bg-slate-900 bg-opacity-75 transition-opacity' />
         </Transition.Child>
 
         <div className='fixed inset-0 overflow-hidden'>
